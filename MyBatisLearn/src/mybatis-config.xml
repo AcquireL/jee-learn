@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?> 
+<!DOCTYPE configuration PUBLIC 
+	"-//mybatis.org//DTD Config 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+
+	<!-- 定义变量,引用的文件优先级更高 -->
+	<properties resource="db.properties">
+		<property name="username" value="briup" />
+		<property name="jdbc.password" value="713181" />
+	</properties>
+
+	<!-- 配置自定义类型别名,映射文件中使用 -->
+	<typeAliases>
+		<!-- <typeAlias alias="Student" type="com.briup.pojo.Student" /> -->
+
+		<!-- 声明指定包下面所有自定义类型别名为 类名 -->
+		<package name="com.briup.pojo" />
+		<package name="com.briup.annotation" />
+		<package name="com.briup.special" />
+	</typeAliases>
+
+	<!-- 配置自定义类型转换器 -->
+	<typeHandlers>
+		<typeHandler
+			handler="com.briup.typehandlers.PhoneTypeHandler" />
+	</typeHandlers>
+
+	<environments default="development">
+		<environment id="development">
+			<transactionManager type="JDBC" />
+			<dataSource type="POOLED">
+				<!-- <property name="driver" value="com.mysql.jdbc.Driver" /> <property 
+					name="url" value="jdbc:mysql://localhost:3306/test" /> -->
+				<property name="driver" value="${jdbc.driverClassName}" />
+				<property name="url" value="${jdbc.url}" />
+				<property name="username" value="${username}" />
+				<property name="password" value="${jdbc.password}" />
+			</dataSource>
+		</environment>
+	</environments>
+
+	<!-- 配置映射文件 -->
+	<mappers>
+		<!-- 自动扫描包下所有xml映射文件 -->
+		<!-- <package name="com.briup.mappers"/> -->
+
+		<!-- <mapper resource="com/briup/mappers/StudentMapper.xml" /> <mapper 
+			resource="com/briup/mappers/One2MoreMapper.xml" /> <mapper resource="com/briup/mappers/AnnotationMapper2.xml" 
+			/> <mapper class="com.briup.mappers.AnnotationMapper"/> <mapper resource="com/briup/mappers/DynamicSqlMapper.xml" 
+			/> <mapper resource="com/briup/mappers/SpecialMapper.xml" /> -->
+		<mapper resource="com/briup/mappers/One2OneMapper.xml" />
+
+		<mapper resource="com/briup/mappers/AnnotationMapper2.xml" />
+		<mapper class="com.briup.mappers.AnnotationMapper" />
+	</mappers>
+</configuration> 
+
+
+
+
+
+
