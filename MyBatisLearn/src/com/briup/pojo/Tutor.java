@@ -12,7 +12,6 @@ public class Tutor {
 	private List<Course> courses;
 	public Tutor() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 	public Tutor(Integer tutorId, String name, String email, PhoneNumber phone, Address address, List<Course> courses) {
 		super();

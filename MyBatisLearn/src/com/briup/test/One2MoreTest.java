@@ -4,7 +4,6 @@ import org.apache.ibatis.session.SqlSession;
 import org.junit.Test;
 
 import com.briup.mappers.One2MoreMapper;
-import com.briup.pojo.Address;
 import com.briup.pojo.Tutor;
 import com.briup.utils.MyBatisSqlSessionFactory;
 

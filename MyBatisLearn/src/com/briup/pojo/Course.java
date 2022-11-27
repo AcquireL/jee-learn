@@ -14,7 +14,6 @@ public class Course {
 	
 	public Course() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 	public Course(Integer courseId, String name, String description, Date startDate, Date endDate) {
 		super();

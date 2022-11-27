@@ -232,7 +232,6 @@ public class SpecialMapperTest {
 				System.out.println(key+" : "+map.get(key));
 			}
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} finally {
 			if(session!=null)session.close();
@@ -260,7 +259,6 @@ public class SpecialMapperTest {
 			User user2 = mapper.findUserById(40);
 			System.out.println(user2);
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} finally {
 			if(session!=null)session.close();
