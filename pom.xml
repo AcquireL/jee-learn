@@ -6,10 +6,14 @@
     <version>0.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
     <modules>
-        <module>env-gather</module>
-        <module>env-gather-interface</module>
+<!--        <module>env-gather</module>-->
+<!--        <module>env-gather-interface</module>-->
         <module>spring-learn</module>
     </modules>
+
+    <properties>
+        <docker.registry.url>15279456793</docker.registry.url>
+    </properties>
 
 
     <build>
@@ -58,7 +62,27 @@
                     </execution>
                 </executions>
             </plugin>
-
+            <plugin>
+                <groupId>com.spotify</groupId>
+                <artifactId>dockerfile-maven-plugin</artifactId>
+                <version>1.4.13</version>
+                <executions>
+                    <execution>
+                        <id>default</id>
+                        <goals>
+                            <goal>build</goal>
+                            <goal>push</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <repository>${docker.registry.url}/${artifactId}</repository>
+                    <tag>${project.version}</tag>
+                    <buildArgs>
+                        <JAR_FILE>${project.build.finalName}.jar</JAR_FILE>
+                    </buildArgs>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
 </project>
