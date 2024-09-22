@@ -9,6 +9,8 @@
 <!--        <module>env-gather</module>-->
 <!--        <module>env-gather-interface</module>-->
         <module>spring-learn</module>
+        <module>spring-boot</module>
+        <module>java-base</module>
     </modules>
 
     <properties>
