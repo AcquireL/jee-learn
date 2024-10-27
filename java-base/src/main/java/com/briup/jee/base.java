@@ -1,9 +1,20 @@
 package com.briup.jee;
 
-import java.math.BigInteger;
 
 public class base {
     public static void main(String[] args) {
-        System.out.println(Integer.MAX_VALUE);
+        Thread t1 = new Thread(() -> {
+            while (true) {
+                System.out.println("yield cpu time");
+//                try {
+//                    Thread.sleep(0);
+//                } catch (InterruptedException e) {
+//                    e.printStackTrace();
+//                }
+            }
+        });
+//        t1.setDaemon(true);
+        t1.start();
+
     }
 }
