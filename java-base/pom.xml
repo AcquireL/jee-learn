@@ -17,4 +17,23 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
+<!--    自定义插件使用 mvn clean com.briup.jee:my-maven-plugin:hello -D name=kali-->
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>com.briup.jee</groupId>
+                <artifactId>my-maven-plugin</artifactId>
+                <version>0.0.1-SNAPSHOT</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>hello</goal>
+<!--                            <goal>print</goal>-->
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
 </project>

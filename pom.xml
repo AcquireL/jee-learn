@@ -11,6 +11,7 @@
         <module>spring-learn</module>
         <module>spring-boot</module>
         <module>java-base</module>
+        <module>my-maven-plugin</module>
     </modules>
 
     <properties>
